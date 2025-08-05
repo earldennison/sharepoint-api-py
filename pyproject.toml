@@ -1,0 +1,65 @@
+[project]
+name = "sharepoint-api-py"
+version = "0.1.0"
+description = "Modern Python library for SharePoint API with httpx, async support, and automatic URL parsing"
+authors = [
+    {name = "Earl Dennison", email = "earl@example.com"},
+]
+maintainers = [
+    {name = "Earl Dennison", email = "earl@example.com"},
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+keywords = ["sharepoint", "microsoft", "graph-api", "httpx", "async", "office365"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Standard PEP 621 dependencies (runtime only)
+dependencies = [
+    "pydantic>=2.11.4",
+    "python-dotenv>=1.1.0",
+    "httpx>=0.28.1",
+    "httpx-retries>=0.3.2",
+    "authlib>=1.5.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/earldennison/sharepoint-api-py"
+Repository = "https://github.com/earldennison/sharepoint-api-py"
+Documentation = "https://github.com/earldennison/sharepoint-api-py#readme"
+"Bug Tracker" = "https://github.com/earldennison/sharepoint-api-py/issues"
+Changelog = "https://github.com/earldennison/sharepoint-api-py/releases"
+
+# Optional dependencies for extra features
+[project.optional-dependencies]
+http2 = ["h2>=4.1.0"]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.21.0",
+    "requests-mock>=1.12.1",
+    "black>=24.0.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+    "coverage>=7.4.0",
+]
+
+# Poetry-specific configuration
+[tool.poetry]
+packages = [{include = "sharepoint_api"}]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
